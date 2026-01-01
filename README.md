@@ -38,6 +38,8 @@ This command creates a copy of .env.example and names it .env, allowing you to c
 │   ├── services       <- Service classes to connect with external platforms, tools, or APIs.
 │   └── utility        <- Utility functions and helper scripts.
 │
-└── frontend           <- Frontend source code.
-    └── Dockerfile     <- Dockerfile for the frontend.
+├── frontend           <- Frontend source code.
+│   └── Dockerfile     <- Dockerfile for the frontend.
+│
+└── scripts
 ```
