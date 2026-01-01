@@ -29,6 +29,7 @@ This command creates a copy of .env.example and names it .env, allowing you to c
 ├── .gitignore         <- Specifies intentionally untracked files to ignore.
 │
 ├── backend            <- Backend source code (Python).
+│   ├── Dockerfile     <- Dockerfile for the backend.
 │   ├── main.py        <- Entry point for the backend application.
 │   ├── config.py      <- Configuration management and useful variables.
 │   ├── requirements.txt <- The requirements file for reproducing the backend environment.
