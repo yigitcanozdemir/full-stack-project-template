@@ -27,6 +27,7 @@ This command creates a copy of .env.example and names it .env, allowing you to c
 ├── docker-compose.yml <- Docker Compose configuration for the entire stack.
 ├── .env.example       <- Example environment variables file.
 ├── .gitignore         <- Specifies intentionally untracked files to ignore.
+├── .gitattributes     <- Git configuration for file attributes.
 │
 ├── backend            <- Backend source code (Python).
 │   ├── Dockerfile     <- Dockerfile for the backend.
@@ -40,7 +41,11 @@ This command creates a copy of .env.example and names it .env, allowing you to c
 │   └── utility        <- Utility functions and helper scripts.
 │
 ├── frontend           <- Frontend source code.
-│   └── Dockerfile     <- Dockerfile for the frontend.
 │
-└── scripts
+├── prompts            <- Project-specific instructions and guidelines for AI agents.
+│   ├── AGENTS.md      <- Core principles and constraints for coding agents.
+│   ├── OPTIMIZATION.md <- Guidelines for software optimization and auditing.
+│   └── SECURITY.md     <- Security best practices and requirements.
+│
+└── scripts            <- Shell scripts for automation and maintenance.
 ```
