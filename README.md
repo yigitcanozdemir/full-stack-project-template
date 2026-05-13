@@ -45,7 +45,17 @@ This command creates a copy of .env.example and names it .env, allowing you to c
 ├── prompts            <- Project-specific instructions and guidelines for AI agents.
 │   ├── AGENTS.md      <- Core principles and constraints for coding agents.
 │   ├── OPTIMIZATION.md <- Guidelines for software optimization and auditing.
-│   └── SECURITY.md     <- Security best practices and requirements.
+│   ├── SECURITY.md     <- Security best practices and requirements.
+│   ├── PLANE-AGENTS.md <- Plane project management rules for coding agents.
+│   └── PLANE-SKILL.md  <- Plane API reference skill for coding agents.
 │
 └── scripts            <- Shell scripts for automation and maintenance.
 ```
+
+## About the `prompts/` Directory
+
+The files in `prompts/` — including `AGENTS.md`, `OPTIMIZATION.md`, `SECURITY.md`, `PLANE-AGENTS.md`, and `PLANE-SKILL.md` — are **not agentic configuration files**. They are prompt documents meant to be fed to a coding agent (e.g. Claude Code) **at project creation time** to generate proper configuration files such as `CLAUDE.md`, skill files, or agent rules tailored to your project.
+
+These are **one-time setup prompts**: run them through your coding agent when bootstrapping a new project to produce the actual config files your agents will use. They have no runtime effect on their own and can be removed once the project is set up.
+
+> **Note on Plane integration:** `PLANE-AGENTS.md` and `PLANE-SKILL.md` are not the recommended way to integrate Plane with coding agents. They are legacy prompt-based workarounds. The proper approach is to use the [Plane MCP Server](https://developers.plane.so/dev-tools/mcp-server), which gives coding agents native, structured access to Plane.
