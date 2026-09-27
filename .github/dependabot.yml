@@ -1,0 +1,42 @@
+# Keeps every pin current without breaking the 7-day rule: version-update PRs open only after a
+# release has aged 7 days (cooldown). Security updates ignore the cooldown and open immediately —
+# turn on "Dependabot alerts" and "Dependabot security updates" in the repository's settings.
+version: 2
+
+updates:
+  - package-ecosystem: uv
+    directory: /backend
+    schedule: { interval: weekly }
+    cooldown: { default-days: 7 }
+    groups:
+      backend-minor-and-patch: { update-types: [minor, patch] }
+
+  - package-ecosystem: docker
+    directory: /backend
+    schedule: { interval: weekly }
+    cooldown: { default-days: 7 }
+
+  - package-ecosystem: docker-compose
+    directory: /
+    schedule: { interval: weekly }
+    cooldown: { default-days: 7 }
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly }
+    cooldown: { default-days: 7 }
+    groups:
+      actions: { patterns: ["*"] }
+
+  - package-ecosystem: pre-commit
+    directory: /
+    schedule: { interval: weekly }
+    cooldown: { default-days: 7 }
+
+  # init-stack uncomments this once frontend/package.json exists.
+  # - package-ecosystem: npm
+  #   directory: /frontend
+  #   schedule: { interval: weekly }
+  #   cooldown: { default-days: 7 }
+  #   groups:
+  #     frontend-minor-and-patch: { update-types: [minor, patch] }
